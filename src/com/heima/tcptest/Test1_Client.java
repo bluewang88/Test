@@ -24,6 +24,7 @@ public class Test1_Client {
 		
 		System.out.println(bufferedReader.readLine());
 		
+		socket.close();
 		
 
 	}
