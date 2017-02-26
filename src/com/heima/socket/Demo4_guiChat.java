@@ -10,6 +10,8 @@ import java.awt.TextArea;
 import java.awt.TextField;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.KeyAdapter;
+import java.awt.event.KeyEvent;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
 import java.io.BufferedWriter;
@@ -111,6 +113,20 @@ public class Demo4_guiChat extends Frame{
 			
 		});
 		
+		sendText.addKeyListener(new KeyAdapter() {
+			@Override
+			public void keyReleased(KeyEvent e) {
+				if(e.getKeyCode() == KeyEvent.VK_ENTER ) {
+					try {     
+						send();
+					} catch (Exception e1) {
+						
+						e1.printStackTrace();
+					}
+				}
+			}
+		});
+		
 	}
 	private void shake() {
 		int x = this.getLocation().x;
@@ -164,7 +180,8 @@ public class Demo4_guiChat extends Frame{
 	
 	private void send() throws Exception {
 		String message = sendText.getText();
-		String ip = tField.getText();		
+		String ip = tField.getText();	
+		ip = ip.trim().length() == 0 ? "255.255.255.255":ip;
 		
 		send(message.getBytes(),ip);
 	
