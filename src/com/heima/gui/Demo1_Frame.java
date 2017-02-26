@@ -63,7 +63,7 @@ public class Demo1_Frame {
 			}
 		});
 		
-		b2.addActionListener(new ActionListener() {
+		b2.addActionListener(new ActionListener() {//Ìí¼Ó¶¯×÷¼àÌý
 			
 			@Override
 			public void actionPerformed(ActionEvent e) {
