@@ -58,5 +58,12 @@ public class Person {
 		return name + age;
 	}
 	
+	public void eat() {
+		System.out.println("½ğÇ®±ª");
+	}
+	
+	public void eat(int num) {
+		System.out.println(num + "½ğÇ®±ª");
+	}
 
 }
